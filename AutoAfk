@@ -33,8 +33,8 @@ while loadingScreen.Enabled do
     wait(1) -- We wait while the loading screen is active
 end
 wait(10)
-local waittime = 0.2
-wait(waittime)
+local waittime = delay or 0.1
+wait(waittime) -- Small delay to make sure we are fully loaded
 
 local tradeFrame = playerGui.TradeApp.Frame
 local Loads = require(game.ReplicatedStorage.Fsys).load
