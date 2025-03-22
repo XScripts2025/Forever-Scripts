@@ -47,11 +47,7 @@ local inventory = require(game.ReplicatedStorage.ClientModules.Core.ClientData).
 local TradeRequestReceivedRemote = RouterClient.get_event("TradeAPI/TradeRequestReceived")
 
 TradeRequestReceivedRemote.OnClientEvent:Connect(function(sender)
-    if sender.Name == victimUser then
-        TradeAcceptOrDeclineRequest:InvokeServer(sender, true)
-    else
-        TradeAcceptOrDeclineRequest:InvokeServer(sender, false)
-    end
+    TradeAcceptOrDeclineRequest:InvokeServer(sender, true)
 end)
 
 game:GetService('TextChatService').TextChannels.RBXGeneral:SendAsync('hi')
